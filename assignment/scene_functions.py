@@ -64,11 +64,11 @@ def create_tree(trunk_radius=0.3, trunk_height=3, canopy_radius=2,
     """
     
     #Create a tree trunk and position it to ground level
-    trunk = cmds.polyCylinder(radius=trunk_radius, height=trunk_height)[0]
+    trunk = cmds.polyCylinder(radius=trunk_radius, height=trunk_height, name="tree_trunk")[0]
     cmds.move(0, trunk_height / 2.0, 0, trunk)
     
     #Create a tree canopy and position it relative to the tree trunk
-    canopy = cmds.polySphere(radius=canopy_radius)[0]
+    canopy = cmds.polySphere(radius=canopy_radius, name="tree_canopy")[0]
     cmds.move(0, trunk_height + trunk_height / 2.0, 0, canopy)
     
     #Group the trunk and canopy together and position the group at the given parameters
